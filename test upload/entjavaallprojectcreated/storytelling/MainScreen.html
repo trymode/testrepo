@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="shortcut icon" href="frames/favicon.ico">
+<meta charset="ISO-8859-1">
+<title>Amnesia Hearts</title>
+
+<style type="text/css">
+
+canvas{
+border-width: 1px;
+border-style: double;
+cursor: pointer;
+}
+
+img{
+display: none;
+}
+
+h1 {
+text-align: center;
+font-family: Constantia; 
+font-weight:lighter;
+color: rgb(231,162,225);
+font-size: 45px;
+margin-bottom: 0;
+}
+
+h2{
+font-family: Constantia; 
+font-weight:lighter;
+font-style:italic;
+color: rgb(231,162,225);
+}
+
+html {
+padding:0; 
+margin:0; 
+
+}
+
+body {
+height:100%; 
+padding:0; 
+margin:0; 
+border:0;
+border-width: 6px;
+border-style: solid;
+border-color: rgb(147,66,72);
+background-color: rgb(223,182,144);
+}
+</style>
+
+<script type ="text/javascript">
+
+var vcancas,vcon,vimg1; var cx=0; 
+function loadani(){
+    vcanvas=document.getElementById("canvas");
+	vcon=vcanvas.getContext("2d");
+	vimg1=document.getElementById("imgframe");
+	vcon.drawImage(vimg1,0,0,640,480);
+}
+
+
+</script>
+
+</head>
+
+<body onload="loadani()">
+<div align="center">
+<img id="imgframe" src="frames/welcomescreen1.jpg"/>
+<br>
+<br>
+<br>
+<br>
+
+	<canvas id="canvas" onclick="location.href='ChapterSelect.html'" width ="640" height="480">
+	"This is not supported by this browser"
+	</canvas>
+</div>
+<br>
+<br>
+<br>
+<div align="center">
+	<footer>
+		<hr>
+		<a href="MainScreen.html" style="text-decoration: none">Home</a>
+		&nbsp;
+		&nbsp;
+		&nbsp;
+		<a href="ChapterSelect.html" style="text-decoration: none">Chapter Select</a>
+		&nbsp;
+		&nbsp;
+		&nbsp;
+		<a href="About.html" style="text-decoration: none">About</a>
+	</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="shortcut icon" href="frames/favicon.ico">
+<meta charset="ISO-8859-1">
+<title>Amnesia Hearts</title>
+
+<style type="text/css">
+
+canvas{
+border-width: 1px;
+border-style: double;
+cursor: pointer;
+}
+
+img{
+display: none;
+}
+
+h1 {
+text-align: center;
+font-family: Constantia; 
+font-weight:lighter;
+font-size: 45px;
+margin-bottom: 0;
+}
+
+html {
+padding:0; 
+margin:0; 
+
+}
+
+body {
+height:100%; 
+padding:0; 
+margin:0; 
+border:0;
+border-width: 6px;
+border-style: solid;
+border-color: rgb(147,66,72);
+background-color: rgb(223,182,144);
+}
+</style>
+
+<script type ="text/javascript">
+
+var vcancas,vcon,vimg1; var cx=0; 
+function canvaspic(){
+    vcanvas=document.getElementById("canvas");
+	vcon=vcanvas.getContext("2d");
+	vimg1=document.getElementById("about1");
+	vcon.drawImage(vimg1,0,0,320,200);
+}
+
+function canvaspic2(){
+    vcanvas=document.getElementById("canvas2");
+	vcon=vcanvas.getContext("2d");
+	vimg1=document.getElementById("about2");
+	vcon.drawImage(vimg1,0,0,320,200);
+}
+
+</script>
+
+</head>
+<h1>About us</h1>
+<body onload="canvaspic(), canvaspic2()">
+<div align="center">
+<img id="about1" src="frames/about1.jpg"/>
+<img id="about2" src="frames/about2.jpg"/>
+<br>
+	<canvas id="canvas" width ="320" height="200">
+	"This is not supported by this browser"
+	</canvas>
+	<p>Vinson R. Duroy
+	<br>Programmer
+	<br>Hobbies: Eating </p>
+	<canvas id="canvas2" width ="320" height="200">
+	"This is not supported by this browser"
+	</canvas>
+	<p>Jandean Costales
+	<br>Graphics and Character design
+	<br>Hobbies: Skating
+	</p>
+<h2>
+Credits:<br>
+Source of graphics:
+<a href="https://apps.facebook.com/bitstrips/?fb_source=bookmark_apps&ref=bookmarks&count=0&fb_bmpos=2_0">Bitstrips</a><br>
+</h2>
+</div>
+<br>
+<br>
+<div align="center">
+	<footer>
+		<hr>
+		<a href="MainScreen.html" style="text-decoration: none">Home</a>
+		&nbsp;
+		&nbsp;
+		&nbsp;
+		<a href="ChapterSelect.html" style="text-decoration: none">Chapter Select</a>
+		&nbsp;
+		&nbsp;
+		&nbsp;
+		<a href="About.html" style="text-decoration: none">About</a>
+	</footer>
+</div>
+</body>
+</html>

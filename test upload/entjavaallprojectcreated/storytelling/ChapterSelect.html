@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="shortcut icon" href="frames/favicon.ico">
+<meta charset="ISO-8859-1">
+<title>Amnesia Hearts</title>
+
+<style type="text/css">
+canvas{
+border-width: 2px;
+border-style:solid;
+cursor: pointer;
+}
+
+img{
+display: none;
+}
+
+h1 {
+margin-top: 0;
+margin-bottom: 0;
+}
+
+p{
+margin-top: 0;
+margin-bottom: 0;
+text-align: inherit;
+font-family: Georgia;
+font-size: 16px;
+}
+
+html {
+padding:0; 
+margin:0; 
+
+}
+
+body {
+height:100%; 
+padding:0; 
+margin:0; 
+border:0;
+border-width: 6px;
+border-style: solid;
+border-color: rgb(147,66,72);
+background-color: rgb(223,182,144);
+}
+
+</style>
+
+<script type ="text/javascript">
+
+var vcancas,vcon,vimg1; var cx=0; var counter=0; 
+function stillFrame(){
+    vcanvas=document.getElementById("canvas1");
+	vcon=vcanvas.getContext("2d");
+	vimg1=document.getElementById("stillimg1");
+	vcon.drawImage(vimg1,0,0,320,200);
+}
+
+function stillFrame2(){
+    vcanvas=document.getElementById("canvas2");
+	vcon=vcanvas.getContext("2d");
+	vimg1=document.getElementById("stillimg2");
+	vcon.drawImage(vimg1,0,0,320,200);
+}
+
+function stillFrame3(){
+    vcanvas=document.getElementById("canvas2");
+	vcon=vcanvas.getContext("2d");
+	vimg1=document.getElementById("stillimg2");
+	vcon.drawImage(vimg1,0,0,320,200);
+}
+
+function animationFrame1(){
+	vcanvas=document.getElementById("canvas1");
+	vcon=vcanvas.getContext("2d");
+	vimg1=document.getElementById("selectframe1");
+	vcon.drawImage(vimg1,cx,0,640,480,0,0,320,200);
+	setInterval("animate()",1000);
+}
+
+function animationFrame2(){
+	vcanvas=document.getElementById("canvas2");
+	vcon=vcanvas.getContext("2d");
+	vimg1=document.getElementById("selectframe2");
+	vcon.drawImage(vimg1,cx,0,640,480,0,0,320,200);
+	setInterval("animate()",2000);
+}
+
+function animationFrame3(){
+	vcanvas=document.getElementById("canvas3");
+	vcon=vcanvas.getContext("2d");
+	vimg1=document.getElementById("selectframe2");
+	vcon.drawImage(vimg1,cx,0,640,480,0,0,320,200);
+	setInterval("animate()",2000);
+}
+
+function animate(){
+	if(counter<=9) counter++; else counter=0;
+    cx=counter*640;
+    vcon.drawImage(vimg1,cx,0,640,480,0,0,320,200);
+}
+
+
+</script>
+
+</head>
+
+<body onload="stillFrame(),stillFrame2()">
+<div align="center">
+<h1>Chapter Select</h1>
+<br>
+<p>Chapter 1 - 	Introduction 
+<br>Chapter 2 - Remembering the past
+<br>Chapter 3 - Threat to the thread	
+<br>Chapter 4 - Hit and Run	
+<br>Chapter 5 - Revelation to the past 	
+<br>Chapter 6 - Celebration to the ending </p>	
+<br>
+<br>
+<img id="selectframe1" src="frames/chapter1selectframe.png"/>
+<img id="selectframe2" src="frames/chapter2selectframe.png"/>
+<img id="selectframe2" src="frames/chapter3selectframe.png"/>
+
+<img id="stillimg1" src="frames/chapter1stillframe.jpg"/>
+<img id="stillimg2" src="frames/chapter2stillframe.jpg"/>
+<img id="stillimg2" src="frames/chapter3stillframe.jpg"/>
+	
+	<canvas id="canvas1" onmouseover="animationFrame1()" onmouseout="stillFrame()" onclick="location.href='Chapter1Scene1.html'" width ="320" height="200" >
+	
+	</canvas>
+	&nbsp;
+	<canvas id="canvas2" onmouseover="animationFrame2()" onmouseout="stillFrame2()" onclick="location.href='Chapter2Scene1.html'" width ="320" height="200" >
+	
+	</canvas>
+	&nbsp;
+	<canvas id="canvas2" onmouseover="animationFrame3()" onmouseout="stillFrame2()" onclick="location.href='Chapter3Scene1.html'" width ="320" height="200" >
+	
+	</canvas>
+	</div>
+	<br>
+	<br>
+<div align="center">
+	<canvas id="canvas" onclick="location.href='Chapter2Scene1.html'" width ="320" height="200"  >
+	
+	</canvas>
+	&nbsp;
+	<canvas id="canvas" onclick="location.href='Chapter2Scene1.html'" width ="320" height="200" >
+	
+	</canvas>
+	&nbsp;
+	<canvas id="canvas" onclick="location.href='Chapter2Scene1.html'" width ="320" height="200" >
+	
+	</canvas>
+</div>
+<br>
+<br>
+<br>
+<br>
+<div align="center">
+	<footer>
+		<hr>
+		<a href="MainScreen.html" style="text-decoration: none">Home</a>
+		&nbsp;
+		&nbsp;
+		&nbsp;
+		<a href="ChapterSelect.html" style="text-decoration: none">Chapter Select</a>
+		&nbsp;
+		&nbsp;
+		&nbsp;
+		<a href="About.html" style="text-decoration: none">About</a>
+	</footer>
+</div>
+</body>
+</html>

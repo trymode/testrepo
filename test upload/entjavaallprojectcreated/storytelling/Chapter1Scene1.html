@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="shortcut icon" href="frames/favicon.ico">
+<meta charset="ISO-8859-1">
+<title>Amnesia Hearts</title>
+
+<style type="text/css">
+canvas{
+border-width: 2px;
+border-style:solid;
+
+}
+img{
+display: none;
+}
+
+hr{
+border: 0; height: 1px; 
+background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+background-image: -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+background-image: -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+background-image: -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+p{
+text-align: inherit;
+font-family: Georgia;
+font-size: 16px;
+}
+
+
+html {
+padding:0; 
+margin:0; 
+
+}
+
+body {
+height:100%; 
+padding:0; 
+margin:0; 
+border:0;
+border-width: 6px;
+border-style: solid;
+border-color: rgb(147,66,72);
+background-color: rgb(223,182,144);
+}
+
+.button{
+padding: 6px 8px;
+background: fuchsia;
+color: #fff;
+-moz-border-radius: 15px;
+-webkit-border-radius: 15px;
+}
+.button:hover {
+text-decoration: none;
+background: #757575;
+color: #fff;
+cursor: pointer;
+}
+</style>
+
+<script type ="text/javascript">
+
+var vcancas,vcon,vimg1; var cx=0; var stopanim; var counter=0; 
+function loadani(){
+    vcanvas=document.getElementById("canvas");
+	vcon=vcanvas.getContext("2d");
+	vimg1=document.getElementById("imgframe");
+	vcon.drawImage(vimg1,cx,0,640,480,0,0,640,480);
+	if (stopanim!= null) clearInterval(stopanim);		
+	stopanim = setInterval("animate()",3000);
+}
+
+function animate(){
+	if(counter<=6) counter++; else counter=0;
+    cx=counter*640;
+    vcon.drawImage(vimg1,cx,0,640,480,0,0,640,480);
+    if (counter>=7){
+    	clearInterval(stopanim); 
+    	alert('Reached final animation. Please proceed to next scene');
+    }
+      
+}
+document.onkeydown = checkKey;
+function checkKey(e) {
+	
+    e = e || window.event;
+
+    if (e.keyCode == '39') {
+    	window.location.href = "Chapter1Scene2.html";
+    }
+    else if (e.keyCode == '37') {
+    	window.location.href = "ChapterSelect.html";
+    }
+}
+
+</script>
+
+</head>
+
+<body onload="loadani()">
+<div align="center">
+<img id="imgframe" src="frames/sleepingframe.png"/>
+
+	<h1>Amnesia Hearts</h1>
+	<h2>Chapter 1 - Introduction </h2>
+	<h3>Scene 1 - A New Day Ahead</h3>
+	<hr>
+	<p>The sun is rising and the ray of the sun is flashing into the bed of a sleeping Poncho.
+	<br>Poncho tries to get up but is still feeling sleepy.
+	<br>An alarm clock is making a large noise
+	to annoy Poncho on waking up.
+	<br> When Poncho tries to stop the alarm he is shocked by the time and shouted
+	"WAAAAAAAAAAAAAAAAAAAA, I'M LATE FOR THE FIRST DAY OF CLASS" 
+	</p>
+	<hr>
+	<br>
+	<canvas id="canvas" width ="640" height="480">
+	"This is not supported by this browser"
+	</canvas>
+	<br>
+	<br>
+	<input type="button" class="button" value="Back to Chapter Select" onclick="location.href='ChapterSelect.html'">
+		&nbsp;
+	<input type="button" class="button" value="Next Scene" onclick="location.href='Chapter1Scene2.html'">
+	
+</div>
+	<br>
+	
+<div align="center">
+	<footer>
+		<hr>
+		<a href="MainScreen.html" style="text-decoration: none">Home</a>
+		&nbsp;
+		&nbsp;
+		&nbsp;
+		<a href="ChapterSelect.html" style="text-decoration: none">Chapter Select</a>
+		&nbsp;
+		&nbsp;
+		&nbsp;
+		<a href="About.html" style="text-decoration: none">About</a>
+	</footer>
+</div>
+
+</body>
+</html>
